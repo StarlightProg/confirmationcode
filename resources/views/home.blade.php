@@ -39,8 +39,7 @@
                                     <option value="telegram">Telegram</option>
                                 </select>
                                 <div id="input-email">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" id="email" value="{{Auth::user()->email}}">
+                                    <p>Email: {{Auth::user()->email}}</p>
                                 </div>
                                 <div id="input-phone" style="display: none">
                                     <label for="phone">Телефон:</label>
