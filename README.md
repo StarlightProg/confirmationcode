@@ -8,4 +8,3 @@
 7) php artisan serve
 
 Чтобы получать уведомления в telegram надо написать боту @send_confirmation_code_bot 
-(Чтобы узнать свой chat_id можно написать @getmyid_bot)
