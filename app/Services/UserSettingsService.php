@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\User;
 use App\Models\UserSetting;
 use Illuminate\Support\Facades\Auth;
 use App\Services\ConfirmationMethods\SMSConfirmation;
@@ -25,9 +26,10 @@ class UserSettingsService
         $userSettings = $this->userSettingsModel->where('user_id', $userId)->firstOrFail();
         
         if(!is_null($methodData)){
-            Auth::user()->telegram_chat_id = $methodData["telegram"] ?? null;
-            Auth::user()->phone = $methodData["phone"] ?? null;
-            Auth::user()->save();
+            $user = User::where('id', $userId)->firstOrFail();
+            $user->telegram_username = str_replace("@", "", $methodData["telegram"]) ?? null;
+            $user->phone = $methodData["phone"] ?? null;
+            $user->save();
         }
 
         session()->put('settings', $newSettings);

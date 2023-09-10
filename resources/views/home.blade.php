@@ -46,8 +46,8 @@
                                     <input type="tel" name="methodData[phone]" id="phone" value="{{Auth::user()->phone}}">
                                 </div>
                                 <div id="input-telegram" style="display: none">
-                                    <label for="telegram">Telegram chat_id:</label>
-                                    <input type="text" name="methodData[telegram]" id="telegram" value="{{Auth::user()->telegram}}">
+                                    <label for="telegram">Telegram:</label>
+                                    <input type="text" name="methodData[telegram]" id="telegram" value="{{Auth::user()->telegram_username}}">
                                 </div>
                             </div>
 
